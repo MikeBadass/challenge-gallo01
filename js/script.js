@@ -1,32 +1,150 @@
-var button = document.querySelector("button")
-var valor = Number(document.getElementById("valor").value)
+let resp = "";
 
+        function RespSim() {
+            resp = "sim";
+            document.getElementById("exibir-resposta").innerHTML = "Resposta: " + resp;
+            Pergunta();
+        }
 
-button.addEventListener("click", () => {
+        function RespNao() {
+            resp = "nao";
+            document.getElementById("exibir-resposta").innerHTML = "Resposta: " + resp;
+            Pergunta();
+        }
 
-    console.log(); ("Seu animal é um Mamífero? [S/N]: ");
-    resp = Console.ReadLine().ToUpper();
+        //Primeira exibir-pergunta
+        document.getElementById("exibir-pergunta").innerHTML = "O animal é um Mamífero?";
 
-    if (resp == "S") {
-        console.log("Seu animal é um Quadrúpede? [S/N]: ");
+        function Pergunta() {
 
-        if (resp == "S") {
-            console.log("Seu animal é Carnívoro? [S/N]: ");
-
-
-            if (resp == "S") {
-                console.log("Seu animal é o Leão!");
+            if (resp === "sim") {
+                document.getElementById("exibir-pergunta").innerHTML = "O animal é um Quadrúpede? ";
+                if (resp === "sim") {
+                    document.getElementById("exibir-pergunta").innerHTML = "O animal é Carnívoro? ";
+        
+        
+                    if (resp === "sim") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é o Leão!";
+                    }
+                    else if (resp === "nao") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Herbívoro? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Cavalo!";
+                        }
+                    }
+                }
+                else if (resp === "nao") {
+                    document.getElementById("exibir-pergunta").innerHTML = "O animal é um Bípede? ";
+        
+        
+                    if (resp === "sim") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Onívoro? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Homem!";
+                        }
+                        else if (resp === "nao") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é Frugívoro? ";
+        
+        
+                            if (resp === "sim") {
+                                document.getElementById("exibir-pergunta").innerHTML = "O animal é o Macaco!";
+                            }
+                        }
+                    }
+                    else if (resp === "nao") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Voador? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Morcego!";
+                        }
+                        else if (resp === "nao") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é Aquático? ";
+        
+        
+                            if (resp === "sim") {
+                                document.getElementById("exibir-pergunta").innerHTML = "O animal é a Baleia!";
+                            }
+                        }
+                    }
+                }
             }
-            else if (resp == "N") {
-                console.log("Seu animal é Herbívoro? [S/N]: ");
-
-                if (resp == "S") {
-                    console.log("Seu animal é o Cavalo!");
+            else if (resp === "nao") {
+                document.getElementById("exibir-pergunta").innerHTML = "O animal é uma Ave? ";
+        
+        
+                if (resp === "sim") {
+                    document.getElementById("exibir-pergunta").innerHTML = "O animal é naoão Voador? ";
+        
+        
+                    if (resp === "sim") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Tropical? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Avestruz!";
+                        }
+                        else if (resp === "nao") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é Polar? ";
+        
+        
+                            if (resp === "sim") {
+                                document.getElementById("exibir-pergunta").innerHTML = "O animal é o Pinguim!";
+                            }
+                        }
+                    }
+                    else if (resp === "nao") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é naoadador? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Pato!";
+                        }
+                        else if (resp === "nao") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é de Rapina? ";
+        
+        
+                            if (resp === "sim") {
+                                document.getElementById("exibir-pergunta").innerHTML = "O animal é a Águia";
+                            }
+                        }
+                    }
+                }
+                else if (resp === "nao") {
+                    document.getElementById("exibir-pergunta").innerHTML = "O animal é um Réptil? ";
+        
+        
+                    if (resp === "sim") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal tem casco? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é a Tartaruga!";
+                        }
+                    }
+                    else if (resp === "nao") {
+                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Carnívoro? ";
+        
+        
+                        if (resp === "sim") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Crocodilo";
+                        }
+                        else if (resp === "nao") {
+                            document.getElementById("exibir-pergunta").innerHTML = "O animal é sem patas? ";
+        
+        
+                            if (resp === "sim") {
+                                document.getElementById("exibir-pergunta").innerHTML = "O animal é a Cobra!";
+                            }
+                        }
+                    }
                 }
             }
         }
-        else if (resp == "N") {
-            console.log("Seu animal é um Bípede? [S/N]: ");
-        }
-    }
-})
+
+        document.getElementById("btn-sim").addEventListener("click", RespSim);
+        document.getElementById("btn-nao").addEventListener("click", RespNao);
