@@ -1,150 +1,86 @@
 let resp = "";
+let perguntaAtualIndex = 0;
+let animalFinal = "";
 
-        function RespSim() {
-            resp = "sim";
-            document.getElementById("exibir-resposta").innerHTML = "Resposta: " + resp;
-            Pergunta();
-        }
+const perguntas = [
+    "Seu animal é um Mamífero?",
+    "Seu animal é um Quadrúpede?",
+    "Seu animal é Carnívoro?",
+    "Seu animal é Herbívoro?",
+    "Seu animal é um Bípede?",
+    "Seu animal é Onívoro?",
+    "Seu animal é Frugívoro?",
+    "Seu animal é Voador?",
+    "Seu animal é Aquático?",
+    "Seu animal é uma Ave?",
+    "Seu animal é Não Voador?",
+    "Seu animal é Polar?",
+    "Seu animal é Nadador?",
+    "Seu animal é de Rapina?",
+    "Seu animal é um Réptil?",
+    "Seu animal tem casco?",
+    "Seu animal é sem patas?",
+    "Não sei qual é o animal!"
+];
 
-        function RespNao() {
-            resp = "nao";
-            document.getElementById("exibir-resposta").innerHTML = "Resposta: " + resp;
-            Pergunta();
-        }
+const animais = [
+    "Leão",
+    "Cavalo",
+    "Homem",
+    "Macaco",
+    "Morcego",
+    "Baleia",
+    "Avestruz",
+    "Pinguim",
+    "Pato",
+    "Águia",
+    "Tartaruga",
+    "Crocodilo",
+    "Cobra"
+];
 
-        //Primeira exibir-pergunta
-        document.getElementById("exibir-pergunta").innerHTML = "O animal é um Mamífero?";
+//Aqui controla em qual pergunta está e se chegou em um animal especifico e quando ele adivinhar o animal os botões de sim e não são desativados e só vão voltar quando o algoritino for reiniciado
+function MostrarPergunta() {
+    if (perguntaAtualIndex < perguntas.length) {
+        document.getElementById("exibir-pergunta").innerHTML = perguntas[perguntaAtualIndex];
+    } else {
+        document.getElementById("exibir-pergunta").innerHTML = "Resposta: " + animalFinal;
+        document.getElementById("btn-sim").disabled = true;
+        document.getElementById("btn-nao").disabled = true;
+    }
+}
 
-        function Pergunta() {
+//Respostas dos botões
+function RespSim() {
+    resp = "sim";
+    perguntaAtualIndex++;
+    Perguntar();
+}
 
-            if (resp === "sim") {
-                document.getElementById("exibir-pergunta").innerHTML = "O animal é um Quadrúpede? ";
-                if (resp === "sim") {
-                    document.getElementById("exibir-pergunta").innerHTML = "O animal é Carnívoro? ";
-        
-        
-                    if (resp === "sim") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é o Leão!";
-                    }
-                    else if (resp === "nao") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Herbívoro? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Cavalo!";
-                        }
-                    }
-                }
-                else if (resp === "nao") {
-                    document.getElementById("exibir-pergunta").innerHTML = "O animal é um Bípede? ";
-        
-        
-                    if (resp === "sim") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Onívoro? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Homem!";
-                        }
-                        else if (resp === "nao") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é Frugívoro? ";
-        
-        
-                            if (resp === "sim") {
-                                document.getElementById("exibir-pergunta").innerHTML = "O animal é o Macaco!";
-                            }
-                        }
-                    }
-                    else if (resp === "nao") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Voador? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Morcego!";
-                        }
-                        else if (resp === "nao") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é Aquático? ";
-        
-        
-                            if (resp === "sim") {
-                                document.getElementById("exibir-pergunta").innerHTML = "O animal é a Baleia!";
-                            }
-                        }
-                    }
-                }
-            }
-            else if (resp === "nao") {
-                document.getElementById("exibir-pergunta").innerHTML = "O animal é uma Ave? ";
-        
-        
-                if (resp === "sim") {
-                    document.getElementById("exibir-pergunta").innerHTML = "O animal é naoão Voador? ";
-        
-        
-                    if (resp === "sim") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Tropical? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Avestruz!";
-                        }
-                        else if (resp === "nao") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é Polar? ";
-        
-        
-                            if (resp === "sim") {
-                                document.getElementById("exibir-pergunta").innerHTML = "O animal é o Pinguim!";
-                            }
-                        }
-                    }
-                    else if (resp === "nao") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é naoadador? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Pato!";
-                        }
-                        else if (resp === "nao") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é de Rapina? ";
-        
-        
-                            if (resp === "sim") {
-                                document.getElementById("exibir-pergunta").innerHTML = "O animal é a Águia";
-                            }
-                        }
-                    }
-                }
-                else if (resp === "nao") {
-                    document.getElementById("exibir-pergunta").innerHTML = "O animal é um Réptil? ";
-        
-        
-                    if (resp === "sim") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal tem casco? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é a Tartaruga!";
-                        }
-                    }
-                    else if (resp === "nao") {
-                        document.getElementById("exibir-pergunta").innerHTML = "O animal é Carnívoro? ";
-        
-        
-                        if (resp === "sim") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é o Crocodilo";
-                        }
-                        else if (resp === "nao") {
-                            document.getElementById("exibir-pergunta").innerHTML = "O animal é sem patas? ";
-        
-        
-                            if (resp === "sim") {
-                                document.getElementById("exibir-pergunta").innerHTML = "O animal é a Cobra!";
-                            }
-                        }
-                    }
-                }
-            }
-        }
+function RespNao() {
+    resp = "nao";
+    perguntaAtualIndex++;
+    Perguntar();
+}
 
-        document.getElementById("btn-sim").addEventListener("click", RespSim);
-        document.getElementById("btn-nao").addEventListener("click", RespNao);
+function Perguntar(){
+
+    //Aqui ele faria as comparasões se é sim ou não e daria o resultado final
+
+}
+
+//Aqui ele reinicia o algoritimo
+function reiniciar() {
+    perguntaAtualIndex = 0;
+    resp = "";
+    animalFinal = "";
+    MostrarPergunta();
+    document.getElementById("btn-sim").disabled = false;
+    document.getElementById("btn-nao").disabled = false;
+}
+
+MostrarPergunta();
+
+document.getElementById("btn-sim").addEventListener("click", RespSim);
+document.getElementById("btn-nao").addEventListener("click", RespNao);
+document.getElementById("btn-reiniciar").addEventListener("click", reiniciar);
