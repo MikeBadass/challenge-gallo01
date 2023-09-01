@@ -1,31 +1,48 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Figtree:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@200;300;400;500&display=swap');
+
+* {
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
     margin: 0;
     padding: 0;
     background-color: rgb(29, 29, 29);
 }
 
-.main{
-    color:rgb(3, 136, 136);
+.main {
+    color: rgb(4, 158, 158);
+    margin: 20px;
 }
 
-.main-exibir{
-    color:white;
+.main-exibir {
+    padding: 8px;
+    color: white;
 }
 
-.btn-sim{
+.main-exibir> #exibir-pergunta {
+     font-size: 14pt;
+}
+
+.btn{
+    border: none;
+    padding: 5px;
+    width: 50px;
     border-radius: 4px;
     transition: 0.5s;
+    font-weight: 500;
+    box-shadow: -5px 5px 0px rgba(255, 255, 255, 0.325);
 }
 
-.btn-sim:hover{
-    color:rgb(3, 136, 136);
+.btn:hover{
+    background-color: rgb(255, 255, 255);
+    box-shadow: -2px 2px 0px rgba(255, 255, 255, 0.325);
+    color: rgb(3, 136, 136);
+    cursor: pointer;
 }
 
-.btn-nao{
-    border-radius: 4px;
-    transition: 0.5s;
-}
-
-.btn-nao:hover{
-    color:rgb(3, 136, 136);
+.btn:active{
+    background-color: rgba(225, 225, 225, 0.915);
+    color: rgb(1, 168, 168);
+    transition: 0s;
 }
