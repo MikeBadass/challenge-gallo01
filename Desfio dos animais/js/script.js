@@ -121,7 +121,7 @@ function Perguntar() {
             }
         }
         else if (resp == "nao") {
-            
+
             document.getElementById("exibir-pergunta").innerHTML = "O animal é um Réptil?";
             if (resp == "sim") {
 
@@ -152,7 +152,6 @@ function Perguntar() {
             }
         }
     }
-
 }
 
 //Aqui ele reinicia o algoritimo
