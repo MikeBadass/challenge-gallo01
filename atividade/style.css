@@ -9,12 +9,32 @@ body{
     background-color: #a85e14;
     color: #ffffff;
     margin: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: #38232a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 90vh;
 }
 
 .btn {
-    border: none;
+    text-align: center;
     padding: 10px;
-    width: 10%;
+    width: 100%;
     border-radius: 4px;
     transition: 0.5s;
     font-size: 15pt;
@@ -37,7 +57,13 @@ body{
 }
 
 input {
+    border: none;
+    border-radius: 5px;
     padding: 6px;
     font-size: 12pt;
+}
+
+input:focus{
+    outline: none;
 }
 

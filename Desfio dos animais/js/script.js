@@ -7,7 +7,6 @@ function RespSim() {
     console.log("Resposta: Sim");
     resp = "";
     console.log("Resposta Resetada");
-    Perguntar()
 }
 
 function RespNao() {
@@ -15,7 +14,6 @@ function RespNao() {
     console.log("Resposta: Não");
     resp = "";
     console.log("Resposta Resetada");
-
 }
 
 function Perguntar() {
